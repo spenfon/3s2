@@ -1,8 +1,25 @@
-application: cop4331
+application: cop4331-3s2
 version: 1
 runtime: python
 api_version: 1
 
 handlers:
-- url: .*
+
+- url: /css
+  static_dir: css 
+
+- url: /static_images
+  static_dir: images
+
+- url: /request.*
   script: mras.py
+
+- url: /test.*
+  script: mras.py
+
+
+- url: /.*
+  script: mras.py
+  login: required
+
+
